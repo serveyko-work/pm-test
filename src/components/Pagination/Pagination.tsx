@@ -5,13 +5,14 @@ import usePagination, { DOTS } from '../../hooks/usePagination';
 import useCustomNavigate from '../../hooks/useNavigate';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../redux/store';
+import SummarySelectors from '../../redux/summary/summary-selectors';
 
 interface Props {
   siblingCount?: number
 }
 
 const Pagination:FC<Props> = ({siblingCount = 1}) => {
-  const {current_page: currentPage, page_count: pageSize, total_count: totalCount} = useSelector((state: RootState) => state?.summaryReducer);
+  const {current_page: currentPage, page_count: pageSize, total_count: totalCount} = useSelector(SummarySelectors.getData);
   const { changeParam } = useCustomNavigate();
   const paginationRange: (string | number)[] | undefined = usePagination({currentPage, totalCount, siblingCount, pageSize});
 

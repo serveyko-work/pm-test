@@ -1,33 +1,28 @@
 import React, { FC, useEffect, useState } from 'react';
 import Pagination from '../../components/Pagination/Pagination';
 import SummaryHeader from '../../components/SummaryHeader/SummaryHeader';
-import { http } from '../../http/http';
 import { useLocation } from 'react-router-dom';
 import Loader from '../../components/Loader/Loader';
 import styles from './Home.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
-import { setData } from '../../redux/actions/summary';
 import Summaries from '../../components/Summaries/Summaries';
-import { RootState } from '../../redux/store';
-import { results, user } from '../../types/results';
-import { getSummaries } from '../../services/summariesApi';
+import { results } from '../../types/results';
+import SummarySelectors from '../../redux/summary/summary-selectors';
+import { setData } from '../../redux/summary/summary-operations';
 
 const Home: FC = (): JSX.Element => {
   const [loader, setLoader] = useState<boolean>(false);
   const dispatch = useDispatch();
   const {search} = useLocation();
-  const data: results = useSelector((state: RootState) => state?.summaryReducer);
+  const data: results = useSelector(SummarySelectors.getData)
 
   useEffect(() => {
-    setLoader(true);
-    getSummaries(search)
-      .then( (res: results) => {
-        dispatch(setData(res));
-        setLoader(false);
-      })
-      .catch((error) => {
-        console.log(error?.message)
-      });
+    const getSummary = async (): Promise<void> => {
+      setLoader(true);
+      await dispatch(setData(search));
+    }
+
+    getSummary().then(() => setLoader(false));
   }, [search, dispatch])
 
   return (
