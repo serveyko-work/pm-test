@@ -1,0 +1,14 @@
+@use "../../../../scss/mixins";
+@use "../../../../scss/settings";
+
+.button {
+  @include mixins.btn-reset();
+  border: 1px solid settings.$darkBlue;
+  color: settings.$textDark;
+  padding: 15px 16px;
+}
+
+.active {
+  background-color: settings.$darkBlue;
+  color: settings.$white;
+}

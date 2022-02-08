@@ -1,0 +1,42 @@
+@use "../../../scss/settings";
+@use "../../../scss/mixins";
+
+.label {
+  gap: 10px;
+  input {
+    display: none;
+  }
+
+  input[type=radio]:checked + .circle .insideCircle {
+    display: block;
+  }
+
+  .text {
+    font-size: 14px;
+  }
+}
+
+.circle {
+  position: relative;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 17px;
+  height: 17px;
+  min-width: 17px;
+  border-radius: 50%;
+  border: 2px solid settings.$yellowDark;
+  background: #fff;
+  transition: transform .15s cubic-bezier(.4,0,1,1) 0ms;
+}
+
+.insideCircle {
+  display: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: settings.$yellowDark;
+}

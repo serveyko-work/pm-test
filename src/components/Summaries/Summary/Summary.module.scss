@@ -1,0 +1,247 @@
+@use "../../../scss/settings";
+@use "../../../scss/mixins";
+
+.summary {
+  position: relative;
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+  border: 1px solid settings.$stroke;
+  max-width: 900px;
+
+  .summaryWrapper {
+    width: 100%;
+
+    @include mixins.media-max(settings.$sm-break) {
+      display: grid;
+      gap: 20px;
+    }
+  }
+
+  .userBlock {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+
+    .avatar {
+      border-radius: 500px;
+      border: 1px solid settings.$black;
+      height: 164px;
+      width: 164px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 500px;
+      }
+
+      @include mixins.media-max(settings.$sm-break) {
+        height: 70px;
+        width: 70px;
+      }
+    }
+
+    .infoWrapper {
+      display: grid;
+      gap: 18px;
+      width: calc(100% - 300px);
+      align-self: baseline;
+
+      @include mixins.media-max(settings.$sm-break) {
+        width: calc(100% - 90px);
+        gap: 6px;
+      }
+    }
+  }
+
+  .userInfo {
+    .category {
+      font-size: 24px;
+      font-weight: 500;
+
+      @include mixins.media-max(settings.$sm-break) {
+        font-size: 16px;
+        color: settings.$yellowDark;
+      }
+    }
+  }
+
+  .nameAndLocation {
+    display: flex;
+    gap: 26px;
+
+    .markBlock {
+      display: flex;
+      gap: 10px;
+      font-size: 14px;
+
+      path {
+        fill: settings.$darkBlue;
+      }
+
+      @include mixins.media-max(settings.$sm-break) {
+        font-size: 13px;
+      }
+    }
+
+    @include mixins.media-max(settings.$sm-break) {
+      flex-direction: column;
+      color: settings.$yellowDark;
+      font-size: 16px;
+      gap: 6px;
+    }
+  }
+
+  .description {
+    display: grid;
+    gap: 12px;
+
+    .desiredposition {
+      color: settings.$textGrey;
+      font-size: 14px;
+    }
+
+    @include mixins.media-max(settings.$sm-break) {
+      display: none;
+    }
+  }
+
+  .onlineInfo {
+    display: flex;
+    gap: 21px;
+
+    .time {
+      color: settings.$disabled;
+    }
+
+    p {
+      font-size: 12px;
+    }
+
+    .circleWrapper {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      white-space: pre;
+
+      p {
+        color: settings.$green;
+      }
+
+      .circle {
+        width: 12px;
+        height: 12px;
+        background-color: settings.$green;
+        //background-color: settings.$lightGrey;
+        border-radius: 20px;
+      }
+    }
+
+    @include mixins.media-max(settings.$sm-break) {
+      display: none;
+    }
+  }
+
+}
+
+.isOnline {
+  background-color: settings.$green;
+}
+
+.settings {
+  width: fit-content;
+  display: flex;
+  gap: 12px;
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .settingsButton {
+    position: relative;
+    width: 46px;
+    height: 46px;
+    border-radius: 8px;
+    border: 1px solid settings.$stroke;
+    padding: 11px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    @include mixins.media-max(settings.$sm-break) {
+      border: none;
+      width: 24px;
+      height: 24px;
+      padding: 0;
+    }
+  }
+
+  @include mixins.media-max(settings.$sm-break) {
+    position: absolute;
+    right: 17px;
+    bottom: 16px;
+  }
+}
+
+.dots {
+  @include mixins.media-max(settings.$sm-break) {
+    svg {
+      height: 15px;
+
+      path {
+        fill: settings.$black;
+      }
+    }
+  }
+}
+
+.modalMenu {
+  border: 1px solid #EAEAEA;
+  padding: 20px;
+  left: -10px;
+  transform: translateX(-100%);
+  background-color: settings.$white;
+  gap: 20px;
+  width: max-content;
+  display: none;
+  user-select: none;
+  position: absolute;
+  border-radius: 12px;
+  top: -5px;
+  z-index: 1;
+
+  @include mixins.media-max(settings.$sm-break) {
+    top: 100%;
+    transform: translateX(calc(-100% + 40px));
+  }
+}
+
+.showModal {
+  display: grid;
+}
+
+.mobileStyle {
+  gap: 20px;
+}
+
+.mobileStyle, .descriptionMobile, .onlineMobile {
+  display: none;
+
+  @include mixins.media-max(settings.$sm-break) {
+    display: grid !important;
+  }
+}
+
+.onlineMobile {
+  display: flex !important;
+  flex-direction: column-reverse;
+  gap: 12px !important;
+  max-width: calc(100% - 70px);
+
+  p {
+    color: settings.$lightGrey;
+  }
+}

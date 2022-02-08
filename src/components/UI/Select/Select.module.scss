@@ -1,0 +1,46 @@
+@use './src/scss/settings';
+@use 'src/scss/mixins';
+
+.select {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.arrow {
+  @include mixins.media-max(settings.$sm-break){
+    width: 10px;
+    height: 12px;
+  }
+}
+
+.options {
+  z-index: 10;
+  border: 1px solid settings.$stroke;
+  border-radius: 12px;
+  background-color: settings.$white;
+  position: absolute;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  top: 100%;
+  padding: 10px 0;
+
+  .option {
+    padding: 0 20px;
+    cursor: pointer;
+    color: settings.$darkBlue;
+    border-radius: 12px;
+    &:hover {
+      background-color: settings.$darkBlue;
+      color: settings.$white;
+    }
+  }
+}
+
+.show {
+  display: grid;
+}

@@ -1,0 +1,41 @@
+@use "../../../scss/mixins";
+@use "../../../scss/settings";
+
+.toggleSwitch {
+  position: relative;
+  display: inline-block;
+  width: 28px;
+  height: 16px;
+
+  input[type="checkbox"] {
+    display: none;
+  }
+
+  .switch {
+    position: absolute;
+    cursor: pointer;
+    background-color: #ccc;
+    border-radius: 25px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: background-color 0.2s ease;
+
+    &::before {
+      position: absolute;
+      content: "";
+      left: 1px;
+      top: 1px;
+      width: 15px;
+      height: 14px;
+      border-radius: 50%;
+      transition: transform 0.3s ease;
+      background-color: settings.$textGrey;
+    }
+  }
+}
+.toggleSwitch input[type="checkbox"]:checked + .switch::before {
+  transform: translateX(11px);
+  background-color: settings.$darkBlue;
+}

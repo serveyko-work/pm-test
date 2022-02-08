@@ -1,0 +1,151 @@
+@use "../../scss/mixins";
+@use "../../scss/settings";
+
+.summaryHeader {
+  max-width: 600px;
+}
+
+.title {
+  font-size: 36px;
+  line-height: 44px;
+  margin-bottom: 16px;
+
+  @include mixins.media-max(settings.$sm-break) {
+    font-weight: 600;
+    line-height: 32px;
+    font-size: 24px;
+    margin-bottom: 9px;
+  }
+}
+
+.line {
+  height: 1px;
+  width: 170px;
+  max-width: 100%;
+  background-color: settings.$black;
+  margin-bottom: 10px;
+
+  @include mixins.media-max(settings.$sm-break) {
+    width: 140px;
+    margin-bottom: 10px;
+  }
+}
+
+.total {
+  color: settings.$lightBlue;
+}
+
+.subtitle {
+  color: settings.$textGrey;
+
+  @include mixins.media-max(settings.$sm-break) {
+    font-size: 12px;
+  }
+}
+
+.subfilter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: fit-content;
+  gap: 15px;
+
+  @include mixins.media-max(settings.$sm-break) {
+    flex-direction: column;
+    width: 100%;
+    gap: 25px;
+    align-items: flex-start;
+  }
+}
+
+.subfilterWrapper {
+  display: flex;
+  justify-content: space-between;
+  width: fit-content;
+  gap: 5px;
+
+  @include mixins.media-max(settings.$sm-break) {
+    width: 100%;
+  }
+
+  svg {
+    display: none;
+
+    @include mixins.media-max(settings.$lg-break) {
+      display: block;
+      width: fit-content;
+    }
+  }
+}
+
+.settingsWrapper {
+  padding: 11px;
+  background-color: settings.$bgBlue;
+  border-radius: 8px;
+  display: none;
+
+  @include mixins.media-max(settings.$lg-break) {
+    display: block;
+  }
+
+  svg {
+    cursor: pointer;
+  }
+}
+
+.customSelect {
+  gap: 23px;
+  color: settings.$lightBlue;
+
+  span {
+    white-space: pre;
+  }
+
+  @include mixins.media-max(settings.$sm-break) {
+    padding-left: 0 !important;
+    color: settings.$darkBlue;
+    gap: 22px;
+  }
+
+  svg {
+    width: 10px;
+    display: block !important;
+  }
+  path {
+    fill: settings.$lightBlue;
+
+    @include mixins.media-max(settings.$sm-break) {
+      fill: settings.$darkBlue;
+    }
+  }
+}
+
+.filter {
+  position: fixed;
+  overflow: auto;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  z-index: 1;
+  left: 0;
+  background-color: settings.$white;
+
+  .closeIcon {
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(13, 74, 145, 0.15);
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+  }
+
+  > div:first-of-type {
+    margin: 0 auto;
+    display: grid;
+    padding: 94px 20px 31px;
+    min-height: 100%;
+    min-width: fit-content;
+  }
+
+}

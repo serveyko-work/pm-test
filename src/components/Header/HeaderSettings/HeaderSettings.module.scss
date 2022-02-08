@@ -1,0 +1,122 @@
+@use './src/scss/settings';
+@use 'src/scss/mixins';
+
+.main{
+  padding: 12px 33px;
+  color: settings.$white;
+  display: flex;
+  justify-content: space-between;
+
+  @include mixins.media-max(settings.$sm-break){
+    flex-direction: row-reverse;
+    padding: 0 20px;
+    line-height: 24px;
+  }
+}
+
+.leftBlock{
+  font-size: 13px;
+  .selectOption {
+    display: none;
+    @include mixins.media-max(settings.$sm-break){
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+
+      svg {
+        width: 10px;
+        height: 10px;
+      }
+    }
+
+    .customSelect {
+      padding: 5px 0 5px 10px;
+      margin-right: 7px;
+      gap: 15px;
+    }
+  }
+}
+
+.leftBlockOptions{
+  align-items: center;
+  display: flex;
+  gap: 15px;
+  margin-top: 7px;
+  cursor: pointer;
+  @include mixins.media-max(settings.$sm-break){
+    display: none;
+  }
+  span{
+    line-height: 12px;
+    padding-right: 15px;
+    border-right: 1px solid;
+    font-size: 16px;
+
+    &:last-child {
+      border-right: none;
+    }
+
+    @include mixins.media-max(settings.$sm-break){
+      font-size: 13px;
+    }
+  }
+}
+
+.rightBlock{
+  align-items: center;
+  display: flex;
+  gap: 16px;
+}
+
+.choseLanguage{
+  align-items: center;
+  display: flex;
+  color: settings.$stroke;
+
+  span {
+    font-size: 14px;
+    @include mixins.media-max(settings.$sm-break){
+      font-size: 12px;
+    }
+  }
+
+  svg {
+    fill: settings.$stroke;
+  }
+
+  .planet {
+    @include mixins.media-max(settings.$sm-break){
+      width: 14px;
+      height: 14px;
+    }
+  }
+  @include mixins.media-max(settings.$sm-break) {
+    margin-left: 5px;
+  }
+}
+
+.signIn{
+  font-size: 14px;
+  text-decoration: underline;
+  cursor: pointer;
+  padding-bottom: 2px;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  @include mixins.media-max(settings.$sm-break){
+    display: none;
+  }
+}
+
+.languageSelect {
+  gap: 10px;
+  padding: 5px 10px 5px 5px;
+  @include mixins.media-max(settings.$sm-break) {
+    gap: 7px;
+    padding: 5px 0;
+  }
+}

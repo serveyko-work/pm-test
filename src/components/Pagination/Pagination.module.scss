@@ -1,0 +1,81 @@
+@use "../../scss/mixins";
+@use "../../scss/settings";
+
+.paginationContainer {
+  display: flex;
+  list-style-type: none;
+  margin-top: 49px;
+  justify-content: center;
+  padding-inline-start: 0;
+
+  .paginationItem {
+    height: 21px;
+    text-align: center;
+    margin: auto 4px;
+    color: rgba(0, 0, 0, 0.87);
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0.01071em;
+    border-radius: 16px;
+    line-height: 1.43;
+    font-size: 13px;
+    min-width: 21px;
+
+    @include mixins.media-max(settings.$xs-break) {
+      padding: 0 3px;
+      min-width: 26px;
+      height: 26px;
+    }
+
+    &.dots:hover {
+      background-color: transparent;
+      cursor: default;
+    }
+    &:hover {
+      background-color: #000046;
+      color: #FFFFFF;
+      cursor: pointer;
+    }
+
+    &.selected {
+      color: #FFFFFF;
+      background-color: #000046;
+    }
+
+    .arrow {
+      &::before {
+        position: relative;
+        content: '';
+        display: inline-block;
+        width: 0.4em;
+        height: 0.4em;
+        border-right: 0.12em solid rgba(0, 0, 0, 0.87);
+        border-top: 0.12em solid rgba(0, 0, 0, 0.87);
+      }
+
+      &.left {
+        transform: rotate(-135deg) translate(-50%);
+      }
+
+      &.right {
+        transform: rotate(45deg);
+      }
+    }
+
+    &.disabled {
+      pointer-events: none;
+
+      .arrow::before {
+        border-right: 0.12em solid rgba(0, 0, 0, 0.43);
+        border-top: 0.12em solid rgba(0, 0, 0, 0.43);
+      }
+
+      &:hover {
+        background-color: transparent;
+        cursor: default;
+      }
+    }
+  }
+}

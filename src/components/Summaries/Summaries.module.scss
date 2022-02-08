@@ -1,0 +1,12 @@
+@use "../../scss/mixins";
+@use "../../scss/settings";
+
+.summaries {
+  display: grid;
+  row-gap: 40px;
+  margin-top: 40px;
+
+  @include mixins.media-max(settings.$sm-break) {
+    margin-top: 30px;
+  }
+}

@@ -1,0 +1,150 @@
+@use "../../scss/mixins";
+@use "../../scss/settings";
+
+.header {
+  height: 230px;
+  background-position: center;
+  background-image: url("../../images/header/Header.jpg");
+  @include mixins.media-max(settings.$lg-break) {
+    background-image: url("../../images/header/HeaderLg.jpg");
+  }
+  @include mixins.media-max(settings.$md-break) {
+    background-image: url("../../images/header/HeaderMd.jpg");
+  }
+  @include mixins.media-max(settings.$sm-break) {
+    height: 250px;
+    background-image: url("../../images/header/HeaderSm.jpg");
+  }
+  @include mixins.media-max(settings.$xs-break) {
+    height: 280px;
+    background-image: url("../../images/header/HeaderXs.jpg");
+  }
+  @include mixins.media-max(settings.$l-break) {
+    background-image: url("../../images/header/HeaderL.jpg");
+  }
+  @include mixins.media-max(settings.$xxs-break) {
+    background-image: url("../../images/header/HeaderXxs.jpg");
+  }
+
+  .webp-supported {
+    background-image: url("../../images/header/Header.webp");
+    @include mixins.media-max(settings.$lg-break) {
+      background-image: url("../../images/header/HeaderLg.webp");
+    }
+    @include mixins.media-max(settings.$md-break) {
+      background-image: url("../../images/header/HeaderMd.webp");
+    }
+    @include mixins.media-max(settings.$sm-break) {
+      background-image: url("../../images/header/HeaderSm.webp");
+    }
+    @include mixins.media-max(settings.$xs-break) {
+      background-image: url("../../images/header/HeaderXs.webp");
+    }
+    @include mixins.media-max(settings.$l-break) {
+      background-image: url("../../images/header/HeaderL.webp");
+    }
+    @include mixins.media-max(settings.$xxs-break) {
+      background-image: url("../../images/header/HeaderXxs.webp");
+    }
+  }
+}
+
+@media(-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+  .header {
+    background-image: url("../../images/header/Header2x.jpg");
+    @include mixins.media-max(settings.$lg-break) {
+      background-image: url("../../images/header/HeaderLg2x.jpg");
+    }
+    @include mixins.media-max(settings.$md-break) {
+      background-image: url("../../images/header/HeaderMd2x.jpg");
+    }
+    @include mixins.media-max(settings.$sm-break) {
+      background-image: url("../../images/header/HeaderSm2x.jpg");
+    }
+    @include mixins.media-max(settings.$xs-break) {
+      background-image: url("../../images/header/HeaderXs2x.jpg");
+    }
+    @include mixins.media-max(settings.$l-break) {
+      background-image: url("../../images/header/HeaderL2x.jpg");
+    }
+    @include mixins.media-max(settings.$xxs-break) {
+      background-image: url("../../images/header/HeaderXxs2x.jpg");
+    }
+  }
+}
+
+:global {
+  .webp {
+    :local {
+      .header {
+        background-image: url("../../images/header/Header.webp");
+        @include mixins.media-max(settings.$lg-break) {
+          background-image: url("../../images/header/HeaderLg.webp");
+        }
+        @include mixins.media-max(settings.$md-break) {
+          background-image: url("../../images/header/HeaderMd.webp");
+        }
+        @include mixins.media-max(settings.$sm-break) {
+          background-image: url("../../images/header/HeaderSm.webp");
+        }
+        @include mixins.media-max(settings.$xs-break) {
+          background-image: url("../../images/header/HeaderXs.webp");
+        }
+        @include mixins.media-max(settings.$l-break) {
+          background-image: url("../../images/header/HeaderL.webp");
+        }
+        @include mixins.media-max(settings.$xxs-break) {
+          background-image: url("../../images/header/HeaderXxs.webp");
+        }
+      }
+
+      @media(-webkit-min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi) {
+        .header {
+          background-image: url("../../images/header/Header2x.webp");
+          @include mixins.media-max(settings.$lg-break) {
+            background-image: url("../../images/header/HeaderLg2x.webp");
+          }
+          @include mixins.media-max(settings.$md-break) {
+            background-image: url("../../images/header/HeaderMd2x.webp");
+          }
+          @include mixins.media-max(settings.$sm-break) {
+            background-image: url("../../images/header/HeaderSm2x.webp");
+          }
+          @include mixins.media-max(settings.$xs-break) {
+            background-image: url("../../images/header/HeaderXs2x.webp");
+          }
+          @include mixins.media-max(settings.$l-break) {
+            background-image: url("../../images/header/HeaderL2x.webp");
+          }
+          @include mixins.media-max(settings.$xxs-break) {
+            background-image: url("../../images/header/HeaderXxs2x.webp");
+          }
+        }
+      }
+    }
+  }
+}
+
+.currentUser {
+  padding-top: 11px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  margin-bottom: 7px;
+
+  .user {
+    color: settings.$white;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  @include mixins.media-max(settings.$sm-break){
+    display: flex;
+    padding-top: 4px;
+  }
+
+}

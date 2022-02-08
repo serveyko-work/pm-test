@@ -1,0 +1,16 @@
+@use "../../../scss/mixins";
+@use "../../../scss/settings";
+
+
+.label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 225px;
+  font-size: 14px;
+
+
+  input[type="radio"]:checked {
+    accent-color: green;
+  }
+}

@@ -1,0 +1,16 @@
+@use "../../../../scss/mixins";
+@use "../../../../scss/settings";
+
+.button {
+  @include mixins.btn-reset();
+  align-items: center;
+  padding: 13px 20px;
+  background: settings.$yellow;
+  border-radius: 8px;
+  color: settings.$darkText;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  white-space: pre;
+  letter-spacing: .9px;
+}

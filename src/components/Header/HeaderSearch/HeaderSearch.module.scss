@@ -1,0 +1,57 @@
+@use "../../../scss/mixins";
+@use "../../../scss/settings";
+
+.searchWrapper {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  padding: 70px 12px 0;
+
+  @include mixins.media-max(settings.$sm-break) {
+    flex-wrap: wrap;
+    padding-top: 25px;
+    row-gap: 13px;
+  }
+}
+
+.markInput {
+  min-width: 200px;
+  input {
+    max-width: 205px;
+  }
+
+  @include mixins.media-max(settings.$sm-break) {
+    width: calc(50% - 4px);
+
+    input {
+      max-width: 100%;
+    }
+  }
+
+  @include mixins.media-max(settings.$xs-break) {
+    width: 100%;
+  }
+}
+
+.searchInput {
+  width: 100%;
+  max-width: 410px;
+  @include mixins.media-max(settings.$sm-break) {
+    width: calc(50% - 4px);
+    max-width: 100%;
+    input {
+      width: 100%;
+    }
+  }
+
+  @include mixins.media-max(settings.$xs-break) {
+    width: 100%;
+  }
+}
+
+.search {
+  @include mixins.media-max(settings.$sm-break) {
+    max-width: 500px;
+    width: 100%;
+  }
+}

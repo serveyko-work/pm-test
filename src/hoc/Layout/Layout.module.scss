@@ -1,0 +1,42 @@
+@use "../../scss/mixins";
+@use "../../scss/settings";
+
+.layout {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.children {
+  width: calc(100% - 363px);
+
+  @include mixins.media-max(settings.$lg-break) {
+    width: 100%;
+  }
+}
+
+.content {
+  width: 100%;
+  box-sizing: border-box;
+  max-width: 1240px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  gap: 40px;
+  padding: 70px 0 120px;
+
+  @include mixins.media-max(settings.$lg-break) {
+    padding: 50px 50px 80px;
+  }
+  @include mixins.media-max(settings.$md-break) {
+    padding: 30px 50px 50px;
+    gap: 20px;
+  }
+  @include mixins.media-max(settings.$sm-break) {
+    flex-direction: column;
+    padding: 20px 40px 40px;
+  }
+  @include mixins.media-max(settings.$xs-break) {
+    padding: 40px 20px 20px;
+  }
+}

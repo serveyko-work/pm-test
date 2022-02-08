@@ -1,0 +1,105 @@
+@use "../../scss/mixins";
+@use "../../scss/settings";
+
+.filterWrapper {
+  display: grid;
+  grid-row-gap: 15px;
+  height: fit-content;
+  max-width: 363px !important;
+  margin-top: 141px;
+  @include mixins.media-max(settings.$lg-break) {
+    width: 100%;
+    display: none;
+    max-width: 100%;
+    margin-top: 0;
+  }
+}
+
+.title {
+  font-size: 24px;
+  line-height: 32px;
+  color: settings.$darkInputText;
+}
+
+.filterBLock {
+  padding: 20px 28px 20px 20px;
+  height: fit-content;
+  background-color: settings.$darkWhite;
+}
+
+.filterWithPhoto {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .withPhotoWrapper {
+    align-items: center;
+    display: flex;
+    gap: 8px;
+
+    .withPhoto {
+      font-size: 14px;
+    }
+
+    .loudSpeaker {
+      padding: 2px 4px;
+    }
+  }
+}
+
+.sexWrapper {
+  width: 100%;
+  display: flex;
+
+  button {
+    width: 100%;
+  }
+
+  .activeButton {
+    background-color: settings.$darkBlue;
+    color: settings.$white;
+  }
+}
+
+.withoutSale {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 29px;
+  align-items: center;
+
+  label {
+
+  }
+
+  p {
+    color: settings.$darkInputText;
+    font-size: 14px;
+    font-weight: 300;
+  }
+}
+
+.customExperience {
+  margin-bottom: 14px;
+}
+
+.checkboxes {
+  display: grid;
+  gap: 12px;
+  .checkBoxWrapper {
+    padding: 2px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: settings.$textGrey;
+  }
+}
+
+.mortarboardWrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  .mortarboard {
+    height: 25px;
+    padding: 4px 0;
+  }
+}

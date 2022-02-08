@@ -1,0 +1,266 @@
+@use "../../scss/mixins";
+@use "../../scss/settings";
+
+.footer {
+  display: grid;
+  height: 333px;
+  background-position: center;
+  padding: 68px 20px 40px;
+  background-image: url("../../images/footer/Footer.jpg");
+  @include mixins.media-max(settings.$lg-break) {
+    padding: 40px 20px 20px;
+    height: auto;
+    background-image: url("../../images/footer/FooterLg.jpg");
+  }
+  @include mixins.media-max(settings.$md-break) {
+    padding: 130px 20px 40px;
+    height: auto;
+    background-image: url("../../images/footer/FooterMd.jpg");
+  }
+  @include mixins.media-max(settings.$sm-break) {
+    background-image: url("../../images/footer/FooterSm.jpg");
+  }
+  @include mixins.media-max(settings.$xs-break) {
+    background-image: url("../../images/footer/FooterXs.jpg");
+  }
+  @include mixins.media-max(settings.$l-break) {
+    background-image: url("../../images/footer/FooterL.jpg");
+  }
+  @include mixins.media-max(settings.$xxs-break) {
+    background-image: url("../../images/footer/FooterXxs.jpg");
+  }
+}
+
+@media(-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+  .footer {
+    background-image: url("../../images/footer/Footer2x.jpg");
+    @include mixins.media-max(settings.$lg-break) {
+      background-image: url("../../images/footer/FooterLg2x.jpg");
+    }
+    @include mixins.media-max(settings.$md-break) {
+      background-image: url("../../images/footer/FooterMd2x.jpg");
+    }
+    @include mixins.media-max(settings.$sm-break) {
+      background-image: url("../../images/footer/FooterSm2x.jpg");
+    }
+    @include mixins.media-max(settings.$xs-break) {
+      background-image: url("../../images/footer/FooterXs2x.jpg");
+    }
+    @include mixins.media-max(settings.$l-break) {
+      background-image: url("../../images/footer/FooterL2x.jpg");
+    }
+    @include mixins.media-max(settings.$xxs-break) {
+      background-image: url("../../images/footer/FooterXxs2x.jpg");
+    }
+  }
+}
+
+:global {
+  .webp {
+    :local {
+      .footer {
+        background-image: url("../../images/footer/Footer.webp");
+        @include mixins.media-max(settings.$lg-break) {
+          background-image: url("../../images/footer/FooterLg.webp");
+        }
+        @include mixins.media-max(settings.$md-break) {
+          background-image: url("../../images/footer/FooterMd.webp");
+        }
+        @include mixins.media-max(settings.$sm-break) {
+          background-image: url("../../images/footer/FooterSm.webp");
+        }
+        @include mixins.media-max(settings.$xs-break) {
+          background-image: url("../../images/footer/FooterXs.webp");
+        }
+        @include mixins.media-max(settings.$l-break) {
+          background-image: url("../../images/footer/FooterL.webp");
+        }
+        @include mixins.media-max(settings.$xxs-break) {
+          background-image: url("../../images/footer/FooterXxs.webp");
+        }
+      }
+
+      @media(-webkit-min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi) {
+        .footer {
+          background-image: url("../../images/footer/Footer2x.webp");
+          @include mixins.media-max(settings.$lg-break) {
+            background-image: url("../../images/footer/FooterLg2x.webp");
+          }
+          @include mixins.media-max(settings.$md-break) {
+            background-image: url("../../images/footer/FooterMd2x.webp");
+          }
+          @include mixins.media-max(settings.$sm-break) {
+            background-image: url("../../images/footer/FooterSm2x.webp");
+          }
+          @include mixins.media-max(settings.$xs-break) {
+            background-image: url("../../images/footer/FooterXs2x.webp");
+          }
+          @include mixins.media-max(settings.$l-break) {
+            background-image: url("../../images/footer/FooterL2x.webp");
+          }
+          @include mixins.media-max(settings.$xxs-break) {
+            background-image: url("../../images/footer/FooterXxs2x.webp");
+          }
+        }
+      }
+    }
+  }
+}
+
+.footerMenuWrapper {
+  margin: 0 83px;
+
+  @include mixins.media-max(settings.$sm-break) {
+    margin: 0;
+  }
+}
+
+.footerMenu {
+  display: flex;
+  width: 90%;
+  max-width: 977px;
+  margin: 0 0 0 auto;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-bottom: 60px;
+
+  @include mixins.media-max(settings.$lg-break) {
+    row-gap: 40px;
+    padding-bottom: 95px;
+    width: 100%;
+  }
+
+  @include mixins.media-max(settings.$md-break) {
+    justify-content: space-around;
+    column-gap: 35px;
+    width: 100%;
+  }
+
+  @include mixins.media-max(settings.$sm-break) {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .footerMenuBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    p {
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    @include mixins.media-max(settings.$md-break) {
+      align-items: center;
+      width: 220px;
+    }
+
+    @include mixins.media-max(settings.$sm-break) {
+      width: 100%;
+      max-width: 300px;
+
+      p, h3 {
+        font-size: 14px;
+      }
+    }
+
+    h3, p {
+      color: settings.$white;
+
+      @include mixins.media-max(settings.$md-break) {
+        text-align: center;
+      }
+    }
+
+    h3 {
+      font-size: 16px;
+      font-weight: 600;
+      padding-bottom: 5px;
+    }
+  }
+
+  .iconsWrapper {
+    padding: 16px 0 20px 0;
+    width: 250px;
+    display: flex;
+    gap: 23px;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+  }
+}
+
+.policy {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 83px;
+  padding: 20px 0 0;
+  justify-content: center;
+  color: settings.$white;
+  gap: 30px;
+  border-top: 1px solid;
+
+  @include mixins.media-max(settings.$sm-break) {
+    margin: 0;
+    column-gap: 15px;
+    padding-top: 10px;
+    row-gap: 10px;
+  }
+
+  p {
+    padding-right: 30px;
+    border-right: 1px solid;
+    height: fit-content;
+    font-size: 14px;
+
+    &:last-child {
+      padding-right: 0;
+      border-right: none;
+    }
+
+    @include mixins.media-max(settings.$sm-break) {
+      margin: 0;
+      font-size: 12px;
+    }
+  }
+}
+
+.policyPc {
+  @include mixins.media-max(settings.$sm-break) {
+    display: none;
+  }
+}
+
+.policyPhone {
+  display: none;
+  @include mixins.media-max(settings.$sm-break) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  p {
+    padding-right: 0;
+    border-right: none;
+    height: fit-content;
+    font-size: 14px;
+
+    &:first-child {
+      padding-right: 30px;
+      border-right: 1px solid;
+
+      @include mixins.media-max(settings.$sm-break) {
+        padding-right: 15px;
+      }
+    }
+
+    &:last-child {
+      @include mixins.media-max(settings.$sm-break) {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+}
