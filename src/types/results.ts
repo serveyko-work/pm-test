@@ -1,11 +1,10 @@
 export interface results {
-  "next": string,
   "previous": string | null,
   "total_count": number,
   "page_count": number,
   "current_page": number,
 
-  results: Array<any>
+  results: Array<user>
 }
 
 interface desiredposition {
