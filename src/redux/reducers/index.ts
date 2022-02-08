@@ -1,4 +1,4 @@
-import summaryReducer from "./summary";
+import summaryReducer from "./summaryReducer";
 import { combineReducers } from "redux";
 const rootReducer = combineReducers({
   summaryReducer

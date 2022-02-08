@@ -6,11 +6,10 @@ import { useLocation } from 'react-router-dom';
 import Loader from '../../components/Loader/Loader';
 import styles from './Home.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
-import { setData } from '../../redux/actions/summary';
 import Summaries from '../../components/Summaries/Summaries';
 import { RootState } from '../../redux/store';
-import { results, user } from '../../types/results';
-import { getSummaries } from '../../services/summariesApi';
+import { results } from '../../types/results';
+import { setData } from '../../redux/actions/summaryActions';
 
 const Home: FC = (): JSX.Element => {
   const [loader, setLoader] = useState<boolean>(false);
@@ -19,15 +18,12 @@ const Home: FC = (): JSX.Element => {
   const data: results = useSelector((state: RootState) => state?.summaryReducer);
 
   useEffect(() => {
-    setLoader(true);
-    getSummaries(search)
-      .then( (res: results) => {
-        dispatch(setData(res));
-        setLoader(false);
-      })
-      .catch((error) => {
-        console.log(error?.message)
-      });
+    const getSummary = async (): Promise<void> => {
+      setLoader(true);
+      await dispatch(setData(search));
+    }
+
+    getSummary().then(() => setLoader(false));
   }, [search, dispatch])
 
   return (
