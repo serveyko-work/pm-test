@@ -124,11 +124,14 @@
   position: fixed;
   overflow: auto;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
+  max-width: 363px;
   top: 0;
   z-index: 1;
-  left: 0;
   background-color: settings.$white;
+  right: 0;
+  transform: translateX(100%);
+  transition: 2s;
 
   .closeIcon {
     padding: 12px;
@@ -148,4 +151,8 @@
     min-width: fit-content;
   }
 
+}
+
+.showFilter {
+  transform: translateX(0);
 }

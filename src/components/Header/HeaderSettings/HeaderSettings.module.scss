@@ -94,6 +94,7 @@
   }
   @include mixins.media-max(settings.$sm-break) {
     margin-left: 5px;
+    gap: 5px;
   }
 }
 
